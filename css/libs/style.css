@@ -1,0 +1,342 @@
+/**
+    Reused from RDTutorials epic style
+*/
+
+.footer-wrapper {
+    background-color: #404040;
+}
+
+footer {
+    margin: 1em;
+}
+
+footer * {
+    color: #808080;
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+small {
+    font-size: 125%;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-image: url("../../images/bg.png");
+    animation: bg-scroll 30s linear infinite;
+    overflow-x: hidden;
+}
+
+@keyframes bg-scroll {
+    from { background-position: 0 0; }
+    to { background-position: 100vw 100vw; }
+}
+
+.title {
+    animation: title-float-stack 7s infinite;
+}
+
+@keyframes title-float-stack {
+    from { transform: rotate(0); animation-timing-function: ease-out; }
+    25% { transform: rotate(4deg); animation-timing-function: ease-in; }
+    50% { transform: rotate(0); animation-timing-function: ease-out; }
+    75% { transform: rotate(-4deg); animation-timing-function: ease-in; }
+    to { transform: rotate(0); animation-timing-function: ease-out; }
+}
+
+.title img {
+    animation: title-float 5s ease-in-out infinite;
+}
+
+@keyframes title-float {
+    from { transform: translate(0, 0) scale(1, 1); }
+    50% { transform: translate(0, -10px) scale(1.01, 1.01); }
+    to { transform: translate(0, 0) scale(1, 1); }
+}
+
+.content {
+    margin-top: 16px;
+}
+
+.sidebar-wrapper {
+    width: 14vw;
+    margin: 1rem;
+}
+
+.sidebar {
+    background: #ffffe0;
+    border: 1px rgba(128, 128, 0, 0.25) solid;
+    border-radius: 1vw;
+    width: 100%;
+    padding: 1rem;
+}
+
+.sidebar-element {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.3rem;
+}
+.sidebar-element a {
+    width: 100%;
+    white-space: nowrap;
+    display: inline;
+}
+
+.post-wrapper {
+    margin: 1rem;
+    margin-left: 0;
+    max-width: calc(100% - 14vw - 4rem);
+}
+
+.post {
+    background: #ffffe0;
+    border: 1px rgba(128, 128, 0, 0.25) solid;
+    border-radius: 1vw;
+    padding: 1rem;
+}
+
+.post-title {
+    margin-bottom: 1rem;
+}
+.post-tags {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-nav {
+    margin-top: 1rem;
+}
+
+.post-nav *, .sidebar-element * {
+    background-color: transparent;
+    border: 0px transparent solid;
+    color: #404020;
+    font-size: 16px;
+    max-width: 33%;
+}
+
+c {
+    color: #808040;
+    font-size: 16px;
+}
+
+.sidebar-element button::before {
+    content: "- ";
+}
+
+footer a {
+    width: 2rem;
+    height: 2rem;
+    margin: 0 0.5rem;
+}
+
+footer i, footer img {
+    width: 2rem;
+    height: 2rem;
+    content: " ";
+    border-radius: 50%;
+    border: 0px transparent solid;
+    overflow: hidden;
+}
+
+footer i::before {
+    display: block;
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+}
+
+footer i img {
+    width: 2rem;
+}
+
+.markdown-body a, .markdown-body button, .markdown-body input {
+    background-color: transparent;
+    border: 0px transparent solid;
+    padding: 0;
+    text-decoration: underline;
+    color: blue;
+}
+
+.markdown-body img {
+    max-width: 100%;
+}
+
+.markdown-body {
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+h1 {
+    font-size: 40px !important;
+    font-weight: normal !important;
+    font-style: normal;
+}
+
+h2 {
+    font-size: 32px !important;
+    font-weight: normal !important;
+    font-style: normal;
+}
+
+red {
+    color: #ff0000;
+}
+
+orange {
+    color: #ff8000;
+}
+
+yellow {
+    color: #ffff00;
+	text-shadow:
+		-2px -2px 0 #000,
+		2px -2px 0 #000,
+		-2px 2px 0 #000,
+		2px 2px 0 #000;
+}
+
+green {
+    color: #00ff00;
+}
+
+cyan {
+    color: #00ffff;
+	text-shadow:
+		-2px -2px 0 #000,
+		2px -2px 0 #000,
+		-2px 2px 0 #000,
+		2px 2px 0 #000;
+}
+
+blue {
+    color: #0080ff;
+}
+
+indigo {
+    color: #0000ff;
+}
+
+purple {
+    color: #8000ff;
+}
+
+magenta {
+    color: #ff00ff;
+}
+
+pink {
+    color: #ff80c0;
+	text-shadow:
+		-2px -2px 0 #000,
+		2px -2px 0 #000,
+		-2px 2px 0 #000,
+		2px 2px 0 #000;
+}
+
+gray {
+    color: #808080;
+}
+
+darkgray {
+    color: #404040;
+}
+
+lightgray {
+    color: #c0c0c0;
+}
+
+@keyframes wavy-text {
+    from {
+        transform: translateY(-8px);
+        color: white;
+    }
+
+    25% {
+        transform: translateY(8px);
+        color: rgb(255, 144, 144);
+    }
+
+    50% {
+        transform: translateY(-8px);
+        color: white;
+    }
+
+    75% {
+        transform: translateY(8px);
+        color: rgb(144, 144, 255);
+    }
+
+    to {
+        transform: translateY(-8px);
+        color: white;
+    }
+}
+
+@keyframes wavy-text-small {
+    from {
+        transform: translateY(-4px);
+        color: white;
+    }
+
+    25% {
+        transform: translateY(4px);
+        color: rgb(144, 144, 255);
+    }
+
+    50% {
+        transform: translateY(-4px);
+        color: white;
+    }
+
+    75% {
+        transform: translateY(4px);
+        color: rgb(255, 144, 144);
+    }
+
+    to {
+        transform: translateY(-4px);
+        color: white;
+    }
+}
+
+strong, b, h1 {
+    display: inline-block;
+    font-weight: normal;
+    animation: wavy-text 4s ease-in-out infinite;
+    animation-delay: calc(0.05s * var(--d));
+}
+
+h2 {
+    display: inline-block;
+    font-weight: normal;
+    animation: wavy-text-small 4s ease-in-out infinite;
+    animation-delay: calc(0.05s * var(--d));
+}
+
+@media screen and (max-width: 500px) {
+    .content {
+        display: block;
+        margin: 0;
+    }
+
+    .sidebar-wrapper {
+        visibility: hidden;
+        max-height: 0;
+        margin: 0;
+    }
+
+    .post-wrapper {
+        max-width: calc(100% - 2rem);
+        margin: 1rem;
+        margin-bottom: 0;
+    }
+    
+    .post-nav a {
+        font-size: 0;
+    }
+}

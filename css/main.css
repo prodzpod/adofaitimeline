@@ -1,0 +1,333 @@
+header, .content {
+    margin: 4vw 4vw 0 4vw;
+}
+
+input {
+    height: 40px;
+    margin: 4px;
+    color: black;
+}
+
+#drop {
+    margin: 2vw;
+    padding: 2vw;
+    border: 3px dotted gray;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#drop.hovered {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#drop i {
+    font-size: 500%;
+    font-weight: 700;
+}
+
+header h1 {
+    font-size: 9vw !important;
+}
+
+header h2 {
+    font-size: 3vw !important;
+}
+
+.subtitle {
+    margin-top: -2vw;
+}
+
+footer * {
+    margin: 2px;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    padding: 4px;
+    margin: 4px;
+}
+
+button > * {
+    font-size: 200%;
+}
+
+.block {
+    margin: 1vw;
+}
+
+h3 {
+    font-size: 200%;
+}
+
+h4 {
+    font-size: 200%;
+}
+
+.lang p {
+    font-size: 150%;
+}
+
+.lang button {
+    margin: 0 4px;
+    background-color: #ccc;
+    width: 32px;
+    height: 16px;
+    border-radius: 8px;
+}
+
+#lang-switch {
+    background-color: #f50;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#table-status p {
+    font-size: 150%;
+    margin: auto 0;
+    break-inside: avoid;
+    word-break: keep-all;
+}
+
+#table-status input, #table-status select {
+    font-size: 150%;
+    border: 3px solid white;
+    background-color: transparent;
+    height: 38px;
+    border-radius: 10px;
+    color: white;
+    padding: 4px 8px;
+    width: 100%;
+}
+
+option {
+    background-color: black;
+}
+
+/** table layout **/
+
+:root {
+    --ymax: 1;
+    --outside-margin: 4vw;
+    --top-buttons: 44px;
+    --top-button-margin: 24px;
+    --tiles: 46px;
+    --cells: 40px;
+    --bottom-button-margin: 4px;
+    --bottom-buttons: 44px;
+    --icon-width: 26px;
+    --tile-thickness: 10px;
+    --triangle-thickness: 8px;
+}
+
+.table {
+    width: calc(100% - var(--outside-margin));
+    position: absolute;
+}
+
+.table-parent {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: calc(var(--outside-margin) / 2);
+    border-radius: calc(var(--outside-margin) / 4);
+    min-height: calc(var(--ymax) * var(--cells) + var(--bottom-buttons) + var(--bottom-button-margin) + var(--tiles) + var(--top-button-margin) + var(--top-buttons) + var(--outside-margin));
+}
+
+#table-bg {
+    top: calc(var(--outside-margin) / 2 + var(--top-buttons) + var(--top-button-margin));
+    min-height: calc(var(--ymax) * var(--cells) + var(--tiles)); 
+}
+
+#table > div {
+    flex: 1 0 0;
+}
+
+.tile {
+    background-color: #333;
+    background-image: url('../images/tiles.png');
+    background-size: 100% var(--tiles);
+    min-height: var(--tiles);
+    max-height: var(--tiles);
+}
+
+.cells {
+    background-color: #666;
+    background-image: url('../images/cells.png');
+    background-size: 100% var(--cells);
+    background-repeat: repeat-y;
+    min-height: calc(var(--ymax) * var(--cells)); 
+    max-height: calc(var(--ymax) * var(--cells));
+}
+
+#table {
+    top: calc(var(--outside-margin) / 2 + var(--top-buttons) + var(--top-button-margin));
+    min-height: calc(var(--ymax) * var(--cells) + var(--tiles));
+}
+
+#table-fg {
+    top: calc(var(--outside-margin) / 2);
+    min-height: calc(var(--ymax) * var(--cells) + var(--bottom-buttons) + var(--bottom-button-margin) + var(--tiles) + var(--top-button-margin) + var(--top-buttons));
+}
+
+/** tile icons **/
+
+.line {
+    position: absolute;
+    top: calc(var(--tiles) / 2);
+    bottom: 4px;
+    left: calc(var(--perc) * 100%);
+    width: 2px;
+}
+
+.icon {
+    position: absolute;
+    left: calc(var(--perc) * 100% - 13px);
+    top: 2px;
+    width: var(--icon-width);
+    height: var(--icon-width);
+}
+
+.tile-center {
+    position: absolute;
+    top: calc((var(--icon-width) - var(--tile-thickness)) / 2);
+    left: calc((var(--icon-width) - var(--tile-thickness)) / 2);
+    width: var(--tile-thickness);
+    height: var(--tile-thickness);
+    background-color: #e0cf9c;
+    border-radius: 50%;
+}
+
+.tile-triangle {
+    position: absolute;
+    top: calc((var(--icon-width) - var(--triangle-thickness)) / 2);
+    left: calc((var(--icon-width) / 2) - (var(--triangle-thickness) * 0.933));
+    border: calc(var(--triangle-thickness) / 2) solid transparent;
+    border-right: calc(var(--triangle-thickness) * 0.866) solid #f0f;
+    transform-origin: 68.3% 50%;
+    transform: rotate(calc(var(--deg) * -1deg));
+    border-radius: 2px;
+}
+
+.tile-edge {
+    position: absolute;
+    top: calc((var(--icon-width) - var(--tile-thickness)) / 2);
+    left: calc(var(--icon-width) / 2);
+    width: calc(var(--icon-width) / 2);
+    height: var(--tile-thickness);
+    background-color: #e0cf9c;
+    border-radius: 2px;
+    transform-origin: left 50%;
+    transform: rotate(calc(var(--deg) * -1deg));
+}
+
+.tile-midspin, .tile-uturn {
+    background: linear-gradient(to right, #333, #333 50%, #e0cf9c 50%);
+    border-radius: 0px;
+}
+
+.tile-midspin::after {
+    position: absolute;
+    display: block;
+    content: " ";
+    width: calc(var(--tile-thickness) / 1.5);
+    height: calc(var(--tile-thickness) / 1.5);
+    right: calc(var(--icon-width) / -8);
+    background-color: #e0cf9c;
+    top: 2px;
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+
+.tile-uturn::after {
+    position: absolute;
+    display: block;
+    content: " ";
+    width: var(--tile-thickness);
+    height: var(--tile-thickness);
+    right: calc(var(--icon-width) / -8);
+    background-color: #e0cf9c;
+    border-radius: 50%;
+}
+
+.tile-number {
+    position: absolute;
+    color: #f0f;
+    text-shadow: black 0 0 1px;
+    width: 100%;
+    top: -24px;
+    font-size: 150%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.speed-number {
+    position: absolute;
+    bottom: -16px;
+    right: -4px;
+}
+
+.twirl {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    bottom: -16px;
+    left: 0;
+}
+
+.speed {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    bottom: -4px;
+    right: -4px;
+}
+
+/** cell icons **/
+
+.cell-trail {
+    position: absolute;
+    background-color: rgba(255, 0, 255, 0.3);
+    top: calc(var(--cells) * var(--y) + var(--tiles));
+    height: var(--cells);
+    left: calc(var(--x) * 100%);
+    width: calc(var(--w) * 100%);
+}
+
+.cell {
+    position: absolute;
+    background-color: #c0c;
+    top: calc(var(--cells) * var(--y) + var(--tiles));
+    left: calc(var(--x) * 100% - (var(--cells) / 2));
+    width: var(--cells);
+    height: var(--cells);
+    border: 3px solid #a0a;
+}
+
+.selected {
+    border-color: white;
+}
+
+.cell-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.up, .down {
+    position: absolute;
+    top: calc(var(--cells) * var(--y) + var(--tiles));
+    left: calc(var(--outside-margin) / -2);
+    width: calc(var(--outside-margin) / 2 - 6px);
+    height: calc(var(--cells) / 2 - 2px);
+    padding: 0;
+}
+
+.down {
+    top: calc(var(--cells) * var(--y) + var(--tiles) + var(--cells) / 2);
+}
+
+.up i, .down i {
+    font-size: 10px;
+}

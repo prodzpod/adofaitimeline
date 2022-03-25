@@ -1,0 +1,177 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="prod">
+    <meta name="description" content="This creation is fanmade and has no relation to 7th Beat Games. Thank you 7BG for making the game.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" href="/images/favicon.png"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" ie-ignore="">
+    <link rel="stylesheet" href="./css/libs/reset.css">
+    <link rel="stylesheet" href="./css/libs/base.css">
+    <link rel="stylesheet" href="./css/libs/style.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./javascript/libs/common.js"></script>
+    <script src="./javascript/data.js"></script>
+    <script src="./javascript/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsonpack@1.1.5/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js"></script>
+    <script>window.MSInputMethodContext && document.documentMode && document.write('<!-- var support for ie11 -->\n<script src="/javascript/libs/ie11.js"><\/script>');</script>
+    <title>ADOFAI TIMELINE EDITOR</title>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="main vlist">
+            <header>
+                <div class="hlist title">
+                    <div class="spacer"></div>
+                    <h1 class="center" style="--d: -1;">A</h1>
+                    <h1 class="center" style="--d: -2;">D</h1>
+                    <h1 class="center" style="--d: -3;">O</h1>
+                    <h1 class="center" style="--d: -4;">F</h1>
+                    <h1 class="center" style="--d: -5;">A</h1>
+                    <h1 class="center" style="--d: -6;">I</h1>
+                    <h1 class="center" style="--d: -7;">&nbsp;</h1>
+                    <h1 class="center" style="--d: -8;">T</h1>
+                    <h1 class="center" style="--d: -9;">I</h1>
+                    <h1 class="center" style="--d: -10;">M</h1>
+                    <h1 class="center" style="--d: -11;">E</h1>
+                    <h1 class="center" style="--d: -12;">L</h1>
+                    <h1 class="center" style="--d: -13;">I</h1>
+                    <h1 class="center" style="--d: -14;">N</h1>
+                    <h1 class="center" style="--d: -15;">E</h1>
+                    <h1 class="center" style="--d: -16;">&nbsp;</h1>
+                    <h1 class="center" style="--d: -17;">E</h1>
+                    <h1 class="center" style="--d: -18;">D</h1>
+                    <h1 class="center" style="--d: -19;">I</h1>
+                    <h1 class="center" style="--d: -20;">T</h1>
+                    <h1 class="center" style="--d: -21;">O</h1>
+                    <h1 class="center" style="--d: -22;">R</h1>
+                    <div class="spacer"></div>
+                </div>
+                <div class="hlist subtitle title en">
+                    <div class="spacer"></div>
+                    <h2 class="center" style="--d: -6;">V</h2>
+                    <h2 class="center" style="--d: -7;">e</h2>
+                    <h2 class="center" style="--d: -8;">r</h2>
+                    <h2 class="center" style="--d: -9;">s</h2>
+                    <h2 class="center" style="--d: -10;">i</h2>
+                    <h2 class="center" style="--d: -11;">o</h2>
+                    <h2 class="center" style="--d: -12;">n</h2>
+                    <h2 class="center" style="--d: -13;">&nbsp;</h2>
+                    <h2 class="center" style="--d: -14;">0</h2>
+                    <h2 class="center" style="--d: -15;">.</h2>
+                    <h2 class="center" style="--d: -16;">0</h2>
+                    <div class="spacer"></div>
+                </div>
+                <div class="hlist subtitle title 한글">
+                    <div class="spacer"></div>
+                    <h2 class="center" style="--d: -8;">버</h2>
+                    <h2 class="center" style="--d: -9;">전</h2>
+                    <h2 class="center" style="--d: -10;">&nbsp;</h2>
+                    <h2 class="center" style="--d: -11;">0</h2>
+                    <h2 class="center" style="--d: -12;">.</h2>
+                    <h2 class="center" style="--d: -13;">0</h2>
+                    <div class="spacer"></div>
+                </div>
+            </header>
+            <div class="content vlist">
+                <div class="hlist lang">
+                    <p>en</p>
+                    <button onclick="switchLanguage()">
+                        <div id="lang-switch"></div>
+                    </button>
+                    <p>한글</p>
+                    <div class="spacer"></div>
+                </div>
+                <div id="drop" class="vlist" ondrop="drop(event)" ondragover="drag(event)" ondragleave="dragend(event)">
+                    <i class="center xi-plus"></i>
+                    <p id="drop-feedback" class="center"></p>
+                </div>
+                <div id="content" style="display: none;">
+                    <div class="block">
+                        <div id="table-status" class="vlist">
+                        </div>
+                    </div>
+                    <div class="block table-parent">
+                        <div id="table-bg" class="hlist table">
+                            <div id="copy-source" class="bg vlist">
+                                <div class="tile"><p>-1</p></div>
+                                <div class="cells"></div>
+                            </div>
+                            <div class="bg vlist">
+                                <div class="tile"><p>0</p></div>
+                                <div class="cells"></div>
+                            </div>
+                            <div class="bg vlist">
+                                <div class="tile"><p>1</p></div>
+                                <div class="cells"></div>
+                            </div>
+                            <div class="bg vlist">
+                                <div class="tile"><p>2</p></div>
+                                <div class="cells"></div>
+                            </div>
+                        </div>
+                        <div id="table" class="table important"></div>
+                        <div id="table-fg" class="table vlist">
+                            <div id="fp-top" class="hlist">
+                                <button id="fp-new" onclick="reset()"><i class="xi-file-add"></i></button>
+                                <button id="fp-save" onclick="download(false)"><i class="xi-save"></i></button>
+                                <button id="fp-action" onclick="download(true)"><i class="xi-download"></i></button>
+                                <div class="spacer"></div>
+                                <button id="fp-less" onclick="reBar(-1, true)"><i class="xi-zoom-in"></i></button>
+                                <button id="fp-more" onclick="reBar(1, true)"><i class="xi-zoom-out"></i></button>
+                            </div>
+                            <div class="spacer"></div>
+                            <div id="fp-bottom" class="hlist">
+                                <button id="fp-mleft" class="fpoint" onclick="moveBar(0, false)"><p class="middle">«</p></button>
+                                <button id="fp-left" class="fpoint" onclick="moveBar(-1, true)"><i class="xi-angle-left-min"></i></button>
+                                <div id="fp-to" class="hlist">
+                                    <div class="spacer"></div>
+                                    <p class="en">to: </p>
+                                    <p class="한글">이동: </p>
+                                    <input type="number" min="0" step="1" onchange="moveBar(this.value, false)">
+                                    <div class="spacer"></div>
+                                </div>
+                                <button id="fp-right" class="fpoint" onclick="moveBar(1, true)"><i class="xi-angle-right-min"></i></button>
+                                <button id="fp-mright" class="fpoint" onclick="moveBar(-1, false)"><p class="middle">»</p></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div id="table-decorations" class="vlist">
+                            <h3 class="en">Decorations</h3> 
+                            <h3 class="한글">장식</h3> 
+                            <div id="decorations"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-spacer"></div>
+            <div class="footer-wrapper">
+                <footer class="vlist center">
+                    <p class="en">This project is for A Dance of Fire and Ice (a game)</p>
+                    <p class="한글">이 프로젝트는 불과 얼음의 춤 (게임)과 관련되어 있습니다</p>
+                    <div class="hlist rdlinks">
+                        <div class="spacer"></div>
+                        <a href="https://7thbe.at/"><img src="./images/samurai.png"></a>
+                        <a href="https://store.steampowered.com/app/977950/A_Dance_of_Fire_and_Ice/"><i class="xi-steam"></i></a>
+                        <a href="https://fizzd.itch.io/a-dance-of-fire-and-ice"><img src="./images/itch.png"></a>
+                        <a href="https://discord.gg/rhythmdr"><img src="./images/discord.png"></a>
+                        <a href="https://www.youtube.com/channel/UCNrgxgOGCEJbuFB5id4KMAQ"><i class="xi-youtube-play"></i></a>
+                        <a href="https://twitter.com/adofai"><i class="xi-twitter"></i></a>
+                        <div class="spacer"></div>
+                    </div>
+                    <p class="en">I'm prod (prodzpod 2022)</p>
+                    <p class="한글">프로드 (prodzpod 2022)</p>
+                    <small class="en">(not related to A Dance of Fire and Ice or 7th Beat Games)</small>
+                    <small class="한글">(불과 얼음의 춤 또는 7th Beat Games에 연관되지 않습니다.)</small>
+                    <div class="hlist SELLOUT-CORNER">
+                        <div class="spacer"></div>
+                        <a href="https://www.youtube.com/channel/UC1Ko4tZpazAIR1112bXzOlg"><i class="xi-youtube-play"></i></a>
+                        <a href="https://github.com/prodzpod"><i class="xi-github"></i></a>
+                        <div class="spacer"></div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>

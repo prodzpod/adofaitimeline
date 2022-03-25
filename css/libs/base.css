@@ -1,0 +1,172 @@
+/*
+
+    CURRENT RESPOND PIXEL SETTING
+
+    1850px /* respond-desktop */ /*
+    1328px /* respond-tablet */ /*
+    1081px /* respond-phone */ /*
+    480px /* respond-xs */ /*
+
+    to change, use CTRL+SHIFT+R and search for regex: (\d+)px /\* respond-INPUTHERE \*/ 
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color: white;
+}
+
+a, li {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.important {
+    z-index: 999;
+    position: relative;
+}
+
+*:not(.important) {
+    z-index: 0;
+    position: relative;
+}
+
+@font-face {
+    font-family: 'godoMaum';
+    src: url('../../data/godoMaum-Regular.woff2') format('woff2'),
+        url('../../data/godoMaum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+a, span, div, p, em, b, c, ul, li, h1, h2, h3, h4, h5, h6, small, td, input, button, select, option {
+    list-style: none;
+    font-family:'godoMaum';
+}
+
+p, em, strong, b, ul, li, td {
+    font-size: 36px;
+}
+
+p img, em img, strong img, b img, ul img, li img, td img {
+    min-width: 36px;
+}
+
+c img, small img {
+    min-width: 24px;
+}
+
+h1 img {
+    min-width: 60px;
+}
+
+h2 img {
+    min-width: 48px;
+}
+
+cue img {
+    width: 48px;
+}
+
+cue {
+    display: block;
+}
+
+a, button {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.noscroll {
+    user-select: none;
+    cursor: default;
+}
+
+i {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+}
+
+[class*=list] {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: stretch;
+}
+
+.vlist {
+    flex-direction: column;
+}
+
+.hlist > div, .vlist > div { /* for ie compat, used to be [class$=list] > div */
+    flex: 1 0 auto;
+}
+
+[class*=stretch] {
+    align-self: stretch;
+}
+
+.spacer, .header-spacer, .footer-spacer {
+    -ms-flex: 999 1 auto !important;
+    flex: 999 0 auto !important;
+}
+
+.left {
+    float: left;
+    left: 0;
+    text-align: left;
+    margin: 0;
+}
+
+.right {
+    float: right;
+    right: 0;
+    text-align: right;
+    margin: 0;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.top {
+    top: 0;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.middle {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.most {
+    position: absolute;
+}
+
+.circle, .circle i {
+    border-radius: 50%;
+}
+
+.box, .box i {
+    border-radius: 5%;
+}
+
+.inline > * {
+    display: inline-block;
+}
